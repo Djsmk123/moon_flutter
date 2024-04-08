@@ -406,6 +406,9 @@ class _MoonTooltipState extends State<MoonTooltip>
 
   @override
   void dispose() {
+    //dispose the animation controller
+    _animationController?.dispose();
+    _curvedAnimation?.dispose();
     if (_overlayEntry != null) {
       _removeTooltip(immediately: true);
     }
